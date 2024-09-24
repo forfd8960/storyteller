@@ -132,3 +132,36 @@ DELETE /v1/stories/{story_id}
 ```json
 200 OK
 ```
+
+## List Stories
+
+* URL: `GET /v1/stories`
+
+* Request
+
+```json
+{
+    "limit": 0,
+    "offset": 100,
+    "key_word": "",
+    "order_by": "create_at desc" // "updated_at desc"
+}
+```
+
+* Response
+
+```json
+{
+    "stories": [
+        {
+            "story_id": "",
+            "author_id": "",
+            "title": "",
+            "contnet": "",
+            "created_at": "",
+            "updated_at": "",
+        }
+    ],
+    "has_more": true
+}
+```
