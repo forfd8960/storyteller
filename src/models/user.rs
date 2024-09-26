@@ -1,4 +1,4 @@
-use super::UserStorage;
+use super::{CreateUser, UserStorage};
 
 pub struct UserModel {}
 
@@ -11,7 +11,7 @@ impl UserStorage for UserModel {
         todo!()
     }
 
-    fn create(user: &super::CreateUser) -> Self {
+    fn create(user: &CreateUser) -> Self {
         todo!()
     }
 }

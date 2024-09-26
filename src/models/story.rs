@@ -1,21 +1,21 @@
-use super::StoryStorage;
+use super::{ListStory, Story, StoryStorage, WriteableStory};
 
 pub struct StoryModel {}
 
 impl StoryStorage for StoryModel {
-    fn get_by_id(id: i64) -> anyhow::Result<super::Story> {
+    fn get_by_id(id: i64) -> anyhow::Result<Story> {
         todo!()
     }
 
-    fn list(list_req: &super::ListStory) -> anyhow::Result<Vec<super::Story>> {
+    fn list(list_req: &ListStory) -> anyhow::Result<Vec<Story>> {
         todo!()
     }
 
-    fn create(story: &super::WriteableStory) -> anyhow::Result<super::Story> {
+    fn create(story: &WriteableStory) -> anyhow::Result<Story> {
         todo!()
     }
 
-    fn update(story: &super::WriteableStory) -> anyhow::Result<super::Story> {
+    fn update(story: &Story) -> anyhow::Result<Story> {
         todo!()
     }
 

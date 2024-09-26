@@ -1,5 +1,5 @@
-use chrono::{DateTime, Utc};
 use anyhow::Result;
+use chrono::{DateTime, Utc};
 
 pub mod story;
 pub mod user;
@@ -55,6 +55,6 @@ pub trait StoryStorage {
     fn get_by_id(id: i64) -> Result<Story>;
     fn list(list_req: &ListStory) -> Result<Vec<Story>>;
     fn create(story: &WriteableStory) -> Result<Story>;
-    fn update(story: &WriteableStory) -> Result<Story>;
+    fn update(story: &Story) -> Result<Story>;
     fn delete(story_id: i64) -> Result<()>;
 }
