@@ -1,9 +1,13 @@
 use tokio::net::TcpListener;
-use tracing::info;
+use tracing::{info, level_filters::LevelFilter};
+use tracing_subscriber::{fmt::Layer, layer::SubscriberExt, util::SubscriberInitExt, Layer as _};
 
 use crate::{service, AppConfig, AppState};
 
 pub async fn run() -> anyhow::Result<()> {
+    let layer = Layer::new().with_filter(LevelFilter::INFO);
+    tracing_subscriber::registry().with(layer).init();
+
     dotenv::dotenv().ok();
 
     let value = dotenv::var("DATABASE_URL").expect("expect database URL");
