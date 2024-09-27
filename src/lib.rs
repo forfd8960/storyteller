@@ -8,7 +8,7 @@ pub mod server;
 pub mod service;
 
 pub struct AppConfig {
-    port: u8,
+    port: u16,
     db_url: String,
 }
 

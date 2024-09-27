@@ -14,6 +14,14 @@ pub fn set_app_router(state: AppState) -> Result<Router, AppError> {
         .route("/users/register", post(user_service::register))
         .route("/users/login", post(user_service::login))
         .route("/users/:id", get(user_service::get_user))
+        .route(
+            "/stories/:id",
+            get(story_service::get_story)
+                .delete(story_service::delete_story)
+                .put(story_service::update_story),
+        )
+        .route("/stories/list", get(story_service::list_stories))
+        .route("/stories", post(story_service::create_story))
         .with_state(state);
 
     Ok(routers)

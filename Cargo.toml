@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.89"
-chrono = "0.4.38"
+chrono = {version="0.4.38", features = ["serde"]}
 serde = {version="1.0.210", features=["derive"]}
 thiserror = "1.0.64"
 axum = { version = "0.7.5", features = [
@@ -22,3 +22,6 @@ sqlx = { version = "0.7.4", features = [
   "tls-rustls",
 ] }
 tokio = { version = "1.37.0", features = ["rt", "rt-multi-thread", "macros"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+dotenv = "0.15.0"
